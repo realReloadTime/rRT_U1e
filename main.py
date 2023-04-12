@@ -9,8 +9,23 @@ app = Flask(__name__)
 
 @app.route('/')
 @app.route('/main_page')
-def index():
-    return render_template('header.html')
+def main_page():
+    return render_template('header.html', title='Главная страница')
+
+
+@app.route('/about')
+def about_page():
+    return render_template('about.html', title='О нас')
+
+
+@app.route('/services')
+def services_page():
+    return render_template('services.html', title='Услуги')
+
+
+@app.route('/submit')
+def submit_page():
+    return render_template('submit.html', title='Оставить заявку')
 
 
 if __name__ == '__main__':
