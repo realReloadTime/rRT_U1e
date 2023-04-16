@@ -1,16 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>{{title}}</title>
-</head>
+{% extends "header.html" %}
 
-<body>
+{% block content %}
 
-<main role="main" class="container">
-    {% block content %}{% endblock %}
-</main>
+<div class="main_div">
+    <table id="block-1">
+        <tr>
+            <td>
+                <img class="portrait" src="static/img/portrait.jpg" alt="ЗДЕСЬ ДОЛЖЕН БЫТЬ ПОРТРЕТ">
+            </td>
+            <td style="position: relative; right: 170px;">
+                <h1 > Юридическая компания "Рога и Копыта" </h1>
+                <h1> &nbsp; </h1>
+                <h3 align="right"> Многолетний стаж работы, множество выигрышных дел, </h3>
+                <h3 align="right"> широкий спектр оказываемых услуг, выгодные цены, </h3>
+                <h3 align="right"> быстрая реакция на вашу заявку - все это про нас! </h3>
+                <h1> &nbsp; </h1>
+                <h3 align="right"> Оставьте заявку - ответим в течение 10 минут! </h3>
+            </td>
+        </tr>
+    </table>
+</div>
 
-<h1> ПРИВЕТ </h1>
-</body>
+<h1> &nbsp; </h1>
+<h2 align="center"> КРАТКО ОБ ОКАЗЫВАЕМЫХ УСЛУГАХ </h2>
 
-</html>
+
+{% endblock %}

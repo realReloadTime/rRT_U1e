@@ -1,12 +1,59 @@
-h1 {
-    border: 2px #eee solid;
-    color: brown;
-    text-align: center;
-    padding: 10px;
-}
-
 .navbar-nav {
     margin-left: 50px;
-    font-size: 20px;
+    margin-right: 50px;
+    font-size: 24px;
+    margin: 0 1em;
+}
 
+body {
+    margin: 0px;
+    width: 100%;
+    padding-top: 100px;
+}
+
+
+.portrait {
+    height: 40%;
+    width: 40%;
+    padding: 25px 0;
+    margin-left: 20%;
+    padding-top: 4%;
+    line-height: 1.25;
+    transition: 0.5s;
+    position: relative;
+    display: inline;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}
+
+.main_div {
+    background-image: url(background_main.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h3 {
+    position: relative;
+    left: -30px;
+    word-wrap: break-word;
+    width: 800px;
+}
+
+form {
+  width: 700px;
+  margin: 0px auto;
+}
+
+label {
+    padding-top: 20px;
 }

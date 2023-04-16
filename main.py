@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/main_page')
 def main_page():
-    return render_template('header.html', title='Главная страница')
+    return render_template('main_page.html', title='Главная страница')
 
 
 @app.route('/about')
@@ -23,9 +23,14 @@ def services_page():
     return render_template('services.html', title='Услуги')
 
 
-@app.route('/submit')
+@app.route('/submit', methods=['GET', 'POST'])
 def submit_page():
-    return render_template('submit.html', title='Оставить заявку')
+    if request.method == 'GET':
+        return render_template('submit.html', title='Оставить заявку')
+    elif request.method == 'POST':
+        print(request.form)
+        print('posted')
+        return 'Заявка отправлена, спасибо! Ожидайте ответа.'
 
 
 if __name__ == '__main__':
