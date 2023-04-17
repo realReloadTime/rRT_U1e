@@ -1,6 +1,15 @@
 {% extends "header.html" %}
 
 {% block content %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <h6 style="background: #D9FFAD;" align="center" class=flashes>
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+    </h6>
+  {% endif %}
+{% endwith %}
 <h1 align="center" style="color: red; padding-top: 20px; padding-bottom: 10px;"> Заполните анкету </h1>
 <form method="post">
     <label for="fio"> Фамилия Имя Отчество </label>
