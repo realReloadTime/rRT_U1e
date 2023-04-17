@@ -57,3 +57,24 @@ form {
 label {
     padding-top: 20px;
 }
+
+.inform {
+    word-wrap: break-word;
+    text-align: left;
+    width: 700px;
+    padding-top: 50px;
+}
+
+.about_div {
+    background-image: url(background_about.jpg);
+    background-width: 900px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 800px 1400px;
+
+    padding-bottom: 200px;
+}
