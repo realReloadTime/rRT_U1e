@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify, render_template, flash, redirect
-import sqlite3
+from data import db_session
 import logging
+from data.submits import Submit
 from datetime import datetime
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'M3d1ZWlod0ZFV0pXRkplZnZkbnhzbmN4enVocXd5dWVyMnkzMjh0SUVXSEZFM1VJZWcxMg=='
@@ -30,20 +32,22 @@ def submit_page():
     if request.method == 'GET':
         return render_template('submit.html', title='Оставить заявку')
     elif request.method == 'POST':
-        con = sqlite3.connect('db/data.sqlite')
-        cur = con.cursor()
-        today = str(datetime.now().strftime('%d.%m.%Y %H:%M'))
-        works = ['Внесение изменений', 'Реорганизация ООО', 'Ликвидация',
-                 'Регистрация ИП', 'Регистрация юр. лица', 'Регистрация ООО', 'Другое']
-        name, text, tipe = request.form['fio'], request.form['comment'], works.index(request.form['type']) + 1
-        email, phone = request.form['email'], request.form['phone']
-        cur.execute("""INSERT INTO submits (name, text, type, time, email, phone, status) VALUES (?, ?, ?, ?, ?, ?, 
-        1)""", (name, text, tipe, today, email, phone))
-        con.commit()
-        con.close()
+        new_sub = Submit()
+        new_sub.name = request.form['fio']
+        new_sub.text = request.form['comment']
+        new_sub.type = request.form['type']
+        new_sub.time = str(datetime.now().strftime('%d.%m.%Y %H:%M'))
+        new_sub.email = request.form['email']
+        new_sub.phone = request.form['phone']
+        new_sub.status = 1
+        db_sess = db_session.create_session()
+        db_sess.add(new_sub)
+        db_sess.commit()
+
         flash('Заявка отправлена, спасибо! Ожидайте ответа.', category='message')
         return redirect('/submit')
 
 
 if __name__ == '__main__':
+    db_session.global_init("db/data.sqlite")
     app.run()
