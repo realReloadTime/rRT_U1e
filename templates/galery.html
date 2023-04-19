@@ -1,5 +1,38 @@
 {% extends "header.html" %}
 
 {% block content %}
+<div align="center">
+    <h1 align="center">ГАЛЕРЕЯ ЗАВЕРШЕННЫХ РАБОТ</h1>
+    <h4 align="center">Здесь представлены последние решения судов по нашей работе</h4>
 
+    <div class="myProducts">
+        <div class="myProducts-gallery">
+            <img src="{{url_for('static', filename='img/Logotype.png')}}"
+                alt="click here"
+                onclick="myImageFunction(this)">
+            <img src="{{url_for('static', filename='img/Logotype2.png')}}"
+                alt="click here"
+                onclick="myImageFunction(this)">
+            <img src="{{url_for('static', filename='img/Logotype3.png')}}"
+                alt="click here"
+                onclick="myImageFunction(this)">
+            <img src="{{url_for('static', filename='img/portrait.jpg')}}"
+                alt="click here"
+                onclick="myImageFunction(this)">
+        </div>
+
+        <div class="image-container">
+            <img id="img-Box" src="{{url_for('static', filename='img/Logotype.png')}}"
+                 alt="click here">
+        </div>
+    </div>
+
+    <script>
+        function myImageFunction(productSmallImg) {
+            var productFullImg = document.getElementById("img-Box");
+            productFullImg.src = productSmallImg.src;
+        }
+    </script>
+    <a href="submit" class="btn btn-primary">Оставить заявку</a>
+</div>
 {% endblock %}

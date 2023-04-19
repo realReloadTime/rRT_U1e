@@ -32,10 +32,12 @@ def submit_page():
     if request.method == 'GET':
         return render_template('submit.html', title='Оставить заявку')
     elif request.method == 'POST':
+        works = ['Внесение изменений', 'Реорганизация ООО', 'Ликвидация', 'Регистрация ИП', 'Регистрация юр. лица', 'Регистрация ООО', 'Другое']
+
         new_sub = Submit()
         new_sub.name = request.form['fio']
         new_sub.text = request.form['comment']
-        new_sub.type = request.form['type']
+        new_sub.type = works.index(request.form['type']) + 1
         new_sub.time = str(datetime.now().strftime('%d.%m.%Y %H:%M'))
         new_sub.email = request.form['email']
         new_sub.phone = request.form['phone']

@@ -78,3 +78,41 @@ label {
 
     padding-bottom: 200px;
 }
+
+.myProducts-gallery img{
+    height: 90px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: block;
+    opacity: .5;
+}
+
+.myProducts-gallery img:hover {
+    opacity: 1;
+}
+
+.myProducts-gallery {
+    float: left;
+}
+
+.myProducts {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    position: absolute;
+}
+
+.image-container img {
+    height: 400px;
+    transition: transform 1s;
+}
+
+.image-container img:hover{
+    transform: scale(1.8);
+    cursor: zoom-in;
+}
+
+.image-container {
+    float: right;
+    padding: 10px;
+}
