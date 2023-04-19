@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, flash, redirect
+from flask import Flask, request, render_template, flash, redirect
 from data import db_session
 import logging
 from data.submits import Submit
@@ -40,12 +40,18 @@ def submit_page():
         new_sub.email = request.form['email']
         new_sub.phone = request.form['phone']
         new_sub.status = 1
+
         db_sess = db_session.create_session()
         db_sess.add(new_sub)
         db_sess.commit()
 
         flash('Заявка отправлена, спасибо! Ожидайте ответа.', category='message')
         return redirect('/submit')
+
+
+@app.route('/galery')
+def galery_page():
+    return render_template('galery.html', title='Галерея работ')
 
 
 if __name__ == '__main__':
