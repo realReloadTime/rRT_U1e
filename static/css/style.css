@@ -136,7 +136,7 @@ label {
 
 .some_info {
     position: relative;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
     word-wrap: break-word;
 
 }
@@ -147,4 +147,60 @@ label {
     height: 50%;
     width: 50%;
     left: 20%;
+}
+
+.services_table
+{
+    align: center;
+    border: 10px;
+    border-collapse: separate; /* Способ отображения границы */
+    width: 50%; /* Ширина таблицы */
+    border-spacing: 7px 11px; /* Расстояние между ячейками */
+    padding-top: 30px;
+}
+
+.services_table a
+{
+    width: 300px;
+    height: 50px;
+}
+
+#making_changes {
+    position: relative;
+    width: 65%;
+    word-wrap: break-word;
+    left: 300px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+#reorganisation {
+    position: relative;
+    width: 65%;
+    word-wrap: break-word;
+    left: 300px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+#liquidation {
+    position: relative;
+    width: 65%;
+    word-wrap: break-word;
+    left: 300px;
+    padding-bottom: 150px;
+    padding-top: 30px;
+}
+
+.bricks {
+    background-image: url(background_services.jpg);
+    background-width: 900px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
