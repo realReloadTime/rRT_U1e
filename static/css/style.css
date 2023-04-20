@@ -42,7 +42,7 @@ footer {
     background-size: cover;
 }
 
-h3 {
+.descript {
     position: relative;
     left: -30px;
     word-wrap: break-word;
@@ -115,4 +115,36 @@ label {
 .image-container {
     float: right;
     padding: 10px;
+}
+
+.serv-main_div {
+    position: relative;
+    width: 80%;
+    left: 240px;
+    bottom: 30px;
+    padding-bottom: 70px;
+}
+
+.sud_pic {
+    position: relative;
+    left: 250px;
+    top: 20px;
+    width: 70%;
+    height: 70%;
+    padding-top: 25px;
+}
+
+.some_info {
+    position: relative;
+    padding-bottom: 200px;
+    word-wrap: break-word;
+
+}
+
+.portrait_descript {
+    position: relative;
+    padding-top: 100px;
+    height: 50%;
+    width: 50%;
+    left: 20%;
 }

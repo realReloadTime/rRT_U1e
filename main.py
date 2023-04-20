@@ -32,7 +32,8 @@ def submit_page():
     if request.method == 'GET':
         return render_template('submit.html', title='Оставить заявку')
     elif request.method == 'POST':
-        works = ['Внесение изменений', 'Реорганизация ООО', 'Ликвидация', 'Регистрация ИП', 'Регистрация юр. лица', 'Регистрация ООО', 'Другое']
+        works = ['Внесение изменений', 'Реорганизация ООО', 'Ликвидация',
+                 'Регистрация ИП', 'Регистрация юр. лица', 'Регистрация ООО', 'Другое']
 
         new_sub = Submit()
         new_sub.name = request.form['fio']
