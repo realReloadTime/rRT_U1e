@@ -1,3 +1,4 @@
+
 .navbar-nav {
     margin-left: 50px;
     margin-right: 50px;
@@ -149,6 +150,19 @@ label {
     left: 20%;
 }
 
+@media (max-width: 930px) { /* это будет показано при разрешении монитора до 930 пикселей */
+  .content-wrapper {padding: 0;} /* основное содержимое занимает всё пространство окна */
+}
+
+@media (max-width: 930px) and (min-width: 470px) {  /* для разрешения экрана от 470 до 930 пикселей */
+  aside {position: static; width: 100%; background: #ccc;} /* боковая колонка смещается согласно расположению в HTML и меняет фон */
+}
+
+@media (max-width: 469px) { /* если максимальное разрешение экрана составит 469 пикселей */
+  body {font: .9em/1em "Helvetica Neue",Arial,Helvetica,sans-serif;} /* меняется шрифт */
+  aside {display: none;} /* боковая колонка исчезает */
+}
+
 .services_table
 {
     align: center;
@@ -184,6 +198,42 @@ label {
 }
 
 #liquidation {
+    position: relative;
+    width: 65%;
+    word-wrap: break-word;
+    left: 300px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+#reg_ip {
+    position: relative;
+    width: 65%;
+    word-wrap: break-word;
+    left: 300px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+#reg_url {
+    position: relative;
+    width: 65%;
+    word-wrap: break-word;
+    left: 300px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+#reg_ooo {
+    position: relative;
+    width: 65%;
+    word-wrap: break-word;
+    left: 300px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+#else {
     position: relative;
     width: 65%;
     word-wrap: break-word;

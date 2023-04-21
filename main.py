@@ -1,20 +1,35 @@
-from flask import Flask, request, render_template, flash, redirect
+from flask import Flask, request, render_template, flash, redirect, make_response, session
 from data import db_session
 import logging
 from data.submits import Submit
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'M3d1ZWlod0ZFV0pXRkplZnZkbnhzbmN4enVocXd5dWVyMnkzMjh0SUVXSEZFM1VJZWcxMg=='
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=1)
 logging.basicConfig(level=logging.INFO)
 sessionStorage = {}
+
+
+@app.before_request
+def increment_count():
+    session.permanent = True
+    session.modified = True
+    user_id = request.remote_addr
+    if 'counter' not in session or type(session['counter']) != dict:
+        session['counter'] = {}
+    if user_id not in session['counter']:
+        session['counter'][user_id] = 1
+    else:
+        session['counter'][user_id] += 1
 
 
 @app.route('/')
 @app.route('/main_page')
 def main_page():
-    return render_template('main_page.html', title='Главная страница')
+    visits_count = len([k for k in session['counter'].keys() if session['counter'][k] > 0])
+    return render_template('main_page.html', title='Главная страница', count=visits_count)
 
 
 @app.route('/about')
