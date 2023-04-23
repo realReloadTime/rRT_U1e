@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template, flash, redirect, session, send_from_directory
-import os
 from data import db_session
 import logging
 from data.submits import Submit
 from datetime import datetime, timedelta
 
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'M3d1ZWlod0ZFV0pXRkplZnZkbnhzbmN4enVocXd5dWVyMnkzMjh0SUVXSEZFM1VJZWcxMg=='
