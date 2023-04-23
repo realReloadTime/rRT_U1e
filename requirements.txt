@@ -1,0 +1,7 @@
+Flask
+Flask-WTF
+Jinja2
+jinxed
+SQLAlchemy==2.0.6
+websockets
+Werkzeug
