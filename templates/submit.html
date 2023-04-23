@@ -11,7 +11,7 @@
   {% endif %}
 {% endwith %}
 <h1 align="center" style="color: red; padding-top: 20px; padding-bottom: 10px;"> Заполните анкету </h1>
-<form method="post">
+<form method="post" style="padding-bottom: 120px;">
     <label for="fio"> Фамилия Имя Отчество </label>
     <div class="form-group">
         <input type="text" class="form-control is-invalid" id="fio" placeholder="Введите своё ФИО" name="fio" required>
@@ -31,7 +31,7 @@
       <option>Другое</option>
     </select>
         <h1> &nbsp; </h1>
-        <textarea class="form-control" rows="5" id="comment" name="comment" placeholder="Дополнительная информация, если она необходима"></textarea>
+        <textarea class="form-control" rows="4" id="comment" name="comment" placeholder="Дополнительная информация, если она необходима"></textarea>
   </div>
     <button type="submit" class="btn btn-primary">Отправить</button>
 </form>

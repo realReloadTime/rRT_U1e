@@ -2,7 +2,8 @@
 <html lang="en" style="min-height: 100%; position: relative;">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -17,6 +18,7 @@
             <img src="static/img/Logotype3.png" width="50" alt="Here Logotype.jpg">
         </a>
         <a class="navbar-nav" style="color: #ffffff;" href="about">О нас</a>
+        <a class="navbar-nav" style="color: #ffffff;" href="galery">Галерея работ</a>
         <a class="navbar-nav ml-auto" style="color: #ffcc00;" href="services">Услуги</a>
         <a class="navbar-nav" style="color: #ffffff; " href="submit">Оставить заявку</a>
     </nav>
@@ -29,15 +31,16 @@
 </body>
 </html>
 
-<footer class="navbar-fixed-bottom text-center text-white" style="background-color: #000000;">
+<footer class="navbar-fixed-bottom text-center text-white" style="background-color: #000000; width: 100%;">
   <!-- Grid container -->
   <div class="container p-2"></div>
   <!-- Grid container -->
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: #000000;">
-    © 2023 Copyright:
-    <a class="text-white" href="#">realReloadTime</a>
+    © 2023 Все права защищены:
+    <a class="text-white" href="https://t.me/realReloadTime">ReloadTime</a>
+    <pre>Количество посещений за месяц: {{ count }}</pre>
   </div>
   <!-- Copyright -->
 </footer>
