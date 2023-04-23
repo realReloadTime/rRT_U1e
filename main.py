@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template, flash, redirect, session
+from flask import Flask, request, render_template, flash, redirect, session, send_from_directory
+import os
 from data import db_session
 import logging
 from data.submits import Submit
@@ -60,6 +61,12 @@ def submit_page():
 @app.route('/galery')
 def galery_page():
     return render_template('galery.html', title='Галерея работ', count=session['counter'])
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'img/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 if __name__ == '__main__':
