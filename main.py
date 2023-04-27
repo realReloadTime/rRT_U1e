@@ -6,15 +6,15 @@ from datetime import datetime, timedelta
 
 import os
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'M3d1ZWlod0ZFV0pXRkplZnZkbnhzbmN4enVocXd5dWVyMnkzMjh0SUVXSEZFM1VJZWcxMg=='
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=60 * 24 * 30)
+application = Flask(__name__)
+application.config['SECRET_KEY'] = 'M3d1ZWlod0ZFV0pXRkplZnZkbnhzbmN4enVocXd5dWVyMnkzMjh0SUVXSEZFM1VJZWcxMg=='
+application.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=60 * 24 * 30)
 logging.basicConfig(level=logging.INFO)
 sessionStorage = {}
 
 
-@app.route('/')
-@app.route('/main_page')
+@application.route('/')
+@application.route('/main_page')
 def main_page():
     if 'counter' not in session:
         session['counter'] = 1
@@ -23,17 +23,17 @@ def main_page():
     return render_template('main_page.html', title='Главная страница', count=session['counter'])
 
 
-@app.route('/about')
+@application.route('/about')
 def about_page():
     return render_template('about.html', title='О нас', count=session['counter'])
 
 
-@app.route('/services')
+@application.route('/services')
 def services_page():
     return render_template('services.html', title='Услуги', count=session['counter'])
 
 
-@app.route('/submit', methods=['GET', 'POST'])
+@application.route('/submit', methods=['GET', 'POST'])
 def submit_page():
     if request.method == 'GET':
         return render_template('submit.html', title='Оставить заявку', count=session['counter'])
@@ -58,17 +58,17 @@ def submit_page():
         return redirect('/submit')
 
 
-@app.route('/galery')
+@application.route('/galery')
 def galery_page():
     return render_template('galery.html', title='Галерея работ', count=session['counter'])
 
 
-@app.route('/favicon.ico')
+@application.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
+    return send_from_directory(os.path.join(application.root_path, 'static'),
                                'img/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 if __name__ == '__main__':
     db_session.global_init("db/data.sqlite")
-    app.run()
+    application.run()
