@@ -1,1 +1,1 @@
-from . import submits
+from . import tables

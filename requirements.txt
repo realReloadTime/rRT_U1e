@@ -6,4 +6,4 @@ SQLAlchemy==2.0.6
 websockets
 Werkzeug
 telebot
-sqlite3
+pysqlite3
